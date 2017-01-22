@@ -294,7 +294,7 @@ public class toolbar implements Runnable {
 	
 	// toggles the hotspots button image (called by ptviewer)
 	public void toggleHSButton() {
-		if( ptv.numhs == 0 ) return;
+		if( ptv.renderer.numhs == 0 ) return;
 		if( isHSButtonPressed ) {
 			if( curStatusHS == BTN_STATUS_PRESSED_OVER)
 				curStatusHS = BTN_STATUS_OVER;
@@ -312,7 +312,7 @@ public class toolbar implements Runnable {
 	
 	// synchronizes the HS button with ptviewer's status
 	public void syncHSButton() {
-		if( ptv.numhs == 0 ) return;
+		if( ptv.renderer.numhs == 0 ) return;
 		if( ptv.showhs ) {
 			isHSButtonPressed = true;
 			if( curStatusHS == BTN_STATUS_OVER || curStatusHS == BTN_STATUS_PRESSED_OVER )
@@ -361,7 +361,7 @@ public class toolbar implements Runnable {
 			}
 		}
 
-		if( ptv.numhs > 0 ) {
+		if( ptv.renderer.numhs > 0 ) {
 			// hotspots button
 			if( overHSButton(i, j) ) {
 				if( !isHSButtonPressed && curStatusHS != BTN_STATUS_OVER ) {
@@ -404,7 +404,7 @@ public class toolbar implements Runnable {
 			zoomThread.start();
 		}
 
-		if( ptv.numhs > 0 ) {
+		if( ptv.renderer.numhs > 0 ) {
 			if( overHSButton(i, j) ) {
 				justPressedHSButton = !isHSButtonPressed;
 				if( !isHSButtonPressed ) {
@@ -427,7 +427,7 @@ public class toolbar implements Runnable {
 			zoomThread = null;
 		}
 
-		if( ptv.numhs > 0 ) {
+		if( ptv.renderer.numhs > 0 ) {
 			if( overHSButton(i, j) ) {
 				if( isHSButtonPressed && !justPressedHSButton ) {
 					curStatusHS = BTN_STATUS_OVER;
@@ -459,7 +459,7 @@ public class toolbar implements Runnable {
 	public void mouseExit( int i, int j ) {
 		curStatusPlus = BTN_STATUS_NORMAL;
 		curStatusMinus = BTN_STATUS_NORMAL;
-		if( ptv.numhs > 0 ) {
+		if( ptv.renderer.numhs > 0 ) {
 			if( isHSButtonPressed )
 				curStatusHS = BTN_STATUS_PRESSED;
 			else
@@ -591,7 +591,7 @@ public class toolbar implements Runnable {
 		drawPlusButton( curStatusPlus );
 		drawMinusButton( curStatusMinus );
 
-		if( ptv.numhs > 0 && curStatusHS == BTN_STATUS_DISABLED ) curStatusHS = BTN_STATUS_NORMAL;
+		if( ptv.renderer.numhs > 0 && curStatusHS == BTN_STATUS_DISABLED ) curStatusHS = BTN_STATUS_NORMAL;
 		drawHSButton( curStatusHS );
 		
 	}

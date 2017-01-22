@@ -340,17 +340,17 @@ public class PTVFile {
 			// Update warped hotspots
 			if (ptv.hsready) {
 				int k;
-				for (k = 0; k < ptv.numhs; k++) {
-					if ((ptv.hs_imode[k] & ptviewer.IMODE_WARP) > 0) { // warped hotspot
-						int w = (int) ptv.hs_up[k];
-						int h = (int) ptv.hs_vp[k];
-						int xp = (int) ptv.hs_xp[k] - w / 2;
-						int yp = (int) ptv.hs_yp[k] - h / 2;
+				for (k = 0; k < ptv.renderer.numhs; k++) {
+					if ((ptv.renderer.hs_imode[k] & ptviewer.IMODE_WARP) > 0) { // warped hotspot
+						int w = (int) ptv.renderer.hs_up[k];
+						int h = (int) ptv.renderer.hs_vp[k];
+						int xp = (int) ptv.renderer.hs_xp[k] - w / 2;
+						int yp = (int) ptv.renderer.hs_yp[k] - h / 2;
 						ptv.im_extractRect(
 								ptv.renderer.imagePixels,
 							xp,
 							yp,
-							(int[]) ptv.hs_him[k],
+							(int[]) ptv.renderer.hs_him[k],
 							w,
 							0,
 							h,
