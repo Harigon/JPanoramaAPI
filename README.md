@@ -2,10 +2,10 @@
 A Java API for projecting panoramic images.
 
 # Software Rendered
-All of the calculations and projections are done in pure software, no dependencies to any native graphic libraries.
+All of the calculations and projections are done in pure software, no dependencies to any native graphical libraries. (e.g OpenGL)
 
 # Standalone
-JPanoramaAPI is completely standalone! The representation and manipulation of the image data is done using standard Integer arrays, making it very easy to port to other languages as there are no dependencies.
+JPanoramaAPI is completely standalone. The representation and manipulation of the image data is handled with Integer arrays, making it very easy to port to other languages as there are no dependencies to any language specific image representations (e.g java.awt.Graphics)
 
 
 # Based on PTViewer
