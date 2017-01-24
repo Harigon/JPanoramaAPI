@@ -1,2 +1,15 @@
 # JPanoramaAPI
-A Java API for drawing panorama images
+A Java API for projecting panoramic images.
+
+# Software Rendered
+All of the calculations and projections are done in pure software, no dependencies to any native graphic libraries.
+
+# Standalone
+JPanoramaAPI is completely standalone! The representation and manipulation of the image data is done using standard Integer arrays, making it very easy to port to other languages as there are no dependencies.
+
+
+# Based on PTViewer
+JPanoramaAPI is an adaption and rework of PTViewer 2.8, which is an open source Java applet for viewing Panoramic Images.  The first step was to strip away all of its heavily intertwined viewer and controller code from the bare logic, leaving behind a standalone API purely for calculating the projection of panoramic images, allowing the user to then display or control the panorama however they wish to.
+
+The next step was to then clean, refactor and rework what was left. 
+A lot of the existing PTViewer code is undocumented, lacks object-orientation and is very difficult to follow.  This makes it extremely challenging for users to adapt the viewer to their needs.  This project turns PTViewer into a user friendly, light-weight, standalone Java API to handle the maths and logic involved to project panoramic images.
